@@ -16,10 +16,20 @@
 
 # 开发设置
 
-- IDE：Unity Hub + Unity Editor 2021.3.4f1
-
+- IDE：Unity Hub + Unity Editor 2021.3.4f1 + Visual Studio 2019
+- Unity编辑器设置
+  - Edit > Preferences > External Tools > External Script Editor 选中 Microsoft Visual Studio 2019 下面的框都勾选
+  - Edit > Project Settings > Player > PC图标 > Resolution and Presentation > Resolution > Fullscreen Mode > 选中 Windowed
+  - Edit > XR Plug-in Management > Intall > 之后在PC图标和安卓图标下面勾选Oculus
+  - File > Build Settings > Scenes In Build > Add Open Scenes
 - Oculus 连接电脑之后要启动 Oculus Rift Link 的界面才能推流 Debug 的画面
 - 关于 Demo：
   - 目前按照油管系列教程完成：[How to Make a VR Multiplayer Game - PART 1 - YouTube](https://www.youtube.com/watch?v=KHWuTBmT1oI&t=1211s)
-  - 多人画面同步使用的是 Photon Pun 2 提供的服务，服务器是大陆的服务器
+  - 网络层的解决方案使用的是 Photon Pun 2 提供的免费服务，上海的服务器
   - 尚未加入手势识别功能，还是使用控制器
+- 下一步的改进计划：
+  - 使用 [Mirror](https://mirror-networking.gitbook.io/docs/) 或者 [MLAPI](https://docs-multiplayer.unity3d.com/netcode/current/about/index.html) 重写网络层的画面同步，并部署 Server 
+    - Mirror 是第三方的库， MLAPI 是 Unity 官方推出的 UNet 后继版本
+    - 目前倾向于使用 MLAPI
+  - 集成 Oculus 提供的手势识别SDK，做动作识别功能
+  - 优化游戏场景与人物 Avatar 
